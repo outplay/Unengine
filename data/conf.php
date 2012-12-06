@@ -15,41 +15,18 @@ if (!mysql_select_db($db, $link))
     echo "<br>Error. No database!<br>";
     exit();
 }
-// Query string
-$str_sql_query = "SELECT * FROM content";
-// query Execution
-if (!$result = mysql_query($str_sql_query, $link))
-{
-    echo "<br>Не могу выполнить запрос<br>";
-    exit();
-}
-// Write pool result
-while ($mas = mysql_fetch_row($result))
-{
-    foreach ($mas as $field)
-    {
-        echo $field . " ";
-    }
-    echo "<br>";
-}
+// Site config
+$strSET = "SELECT * FROM settings ORDER BY id DESC";
+$rs = mysql_query($strSET);
+$row = mysql_fetch_array($rs);
+$title = $row['title'];
+$keywords = $row['keywords'];
+$description = $row['description'];
 // close MYSQL connect
 mysql_close($link);
-// Site Config
-$config = array (
-'title' => 'Blog Php Solutions',
-'file' => '/home/directory/',
-'demail' => 'no mail',
-'deip' => 'ip',
-'newloginlen' => '13',
-'newpasslen' => '19',
-'newmaillen' => '19',
-'nn' => '',
-'nnsum' => '',
-'nnu' => '',
-'nne' => '',
-'type' => '',
-);
+
 $admins = array (
 'admin' => 'admin',
 );
  ?>
+ 

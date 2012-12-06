@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
-</head>
 <body>
 	<div id="page">
 	<img src="img/vs.png" />
@@ -30,6 +29,12 @@
 			<tr>
 				<td class="menuitem">
 				<img class="menupic" src="img/menu_hover.png" /><div class="menuword"><a href="/ap">ADD USER</a></div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="menuitem">
+				<img class="menupic" src="img/menu_hover.png" /><div class="menuword"><a href="#module1">SETTINGS</a></div>
 				</td>
 			</tr>
 			

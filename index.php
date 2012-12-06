@@ -1,10 +1,13 @@
 <?php 
 $theme = "template/default";
+include 'data/conf.php';
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Default</title>
+<meta name="keywords" content="<?=$keywords ?>">
+<meta name="description" content="<?=$description ?>">
+<title><?=$title ?></title>
 <link rel="stylesheet" href="<?= $theme ?>/css/style.css" type="text/css" media="screen" />
 </head>
 <body>
