@@ -1,8 +1,8 @@
 <?php
 switch($_REQUEST['do']) {
-default:$header = ''; $inc = 'modules/default_module_name..php';break;
-case '':$header = ''; $inc = 'modules/default_module_name..php';break;
-case 'setings': $header = 'title'; $inc = 'modules/module_name.php';break;
-case 'news': $header = ''; $inc = 'modules/news/module_name..php';break;
+default:$header = ''; $inc = 'modules/article.php';break;
+case '':$header = ''; $inc = 'modules/article.php';break;
+case 'register': $header = 'Registration'; $inc = 'modules/register.php';break;
+case 'test': $header = ''; $inc = 'modules/news/module_name..php';break;
 }
 ?>

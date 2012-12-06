@@ -22,6 +22,10 @@ $row = mysql_fetch_array($rs);
 $title = $row['title'];
 $keywords = $row['keywords'];
 $description = $row['description'];
+//Article config
+$strSQL = "SELECT * FROM content ORDER BY id DESC";
+$rs = mysql_query($strSQL);
+
 // close MYSQL connect
 mysql_close($link);
 
@@ -29,4 +33,3 @@ $admins = array (
 'admin' => 'admin',
 );
  ?>
- 
