@@ -1,6 +1,7 @@
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -13,9 +14,7 @@ CREATE TABLE IF NOT EXISTS `content` (
   `text` text,
   `data` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
-
-
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=68 ;
 
 INSERT INTO `content` (`id`, `title`, `text`, `data`) VALUES
 (1, 'Article #1', 'The internet has changed a lot since HTML 4.01 became a standard in 1999.</ br>\r\n\r\nToday, some elements in HTML 4.01 are obsolete, never used, or not used the way they were intended to. These elements are removed or re-written in HTML5.\r\n\r\nTo better handle today''s internet use, HTML5 includes new elements for better structure, better form handling, drawing, and for media content.', '0'),
@@ -25,6 +24,19 @@ INSERT INTO `content` (`id`, `title`, `text`, `data`) VALUES
 
 
 
+CREATE TABLE IF NOT EXISTS `settings` (
+  `title` varchar(32) NOT NULL,
+  `owner` varchar(15) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `keywords` varchar(255) DEFAULT NULL,
+  `id` int(9) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+INSERT INTO `settings` (`title`, `owner`, `description`, `keywords`, `id`) VALUES
+('Unengine', 'admin', 'Unengine- my php solution!', 'unengine, test, php, branch', 1);
+
+
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usr` varchar(32) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -32,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `regIP` varchar(15) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `dt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `permissions` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `usr` (`usr`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
