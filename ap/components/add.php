@@ -1,11 +1,8 @@
 <?php
 ini_set('display_errors',1);
 error_reporting(E_ALL);
-
-$db = mysql_connect("localhost","root","");
- mysql_select_db("home",$db);
+include('../../data/conf.php');
  
- $id = $_POST['id'];
  $title = $_POST['title'];
  $text = $_POST['text'];
  $data = date('d M H:m:s');
@@ -16,15 +13,15 @@ $db = mysql_connect("localhost","root","");
  
  
  
- $result = mysql_query("INSERT INTO `content` (`id`, `title`, `text`, `data`) VALUES ('$id', '$title','$text', '$data')"); 
+ $result = mysql_query("INSERT INTO `content` (`title`, `text`, `data`) VALUES ('$title','$text', '$data')"); 
  if($result == TRUE){
-                         echo "Success!";
-						 echo "<a href=\"javascript:history.go(-1)\"> Back!</a> ";
+                         echo "<script>parent.document.getElementById('write').innerHTML+='Success!<br>Article added!'; </script> <br />";
+						 echo "<a href=\"javascript:history.go(-1)\"> Back!</a> <br />";
                                   }
                          else
                                 {
-                              echo "Error!";
-							  echo "<a href=\"javascript:history.go(-1)\"> Back!</a> ";
+                              echo "<script>parent.document.getElementById('write').innerHTML+='Error!<br>Article not add!<br />';</script> ";
+							  echo "<a href=\"javascript:history.go(-1)\"> Back!</a> <br />";
                                 }
      
 }
