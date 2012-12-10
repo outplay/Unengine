@@ -1,3 +1,7 @@
+<?php
+include_once("../data/conf.php");
+checkLoggedIn("yes");
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -40,7 +44,7 @@
 			
 			<tr>
 				<td class="menuitem">
-				<img class="menupic" src="img/menu_hover.png" /><div class="menuword"><a href="/ap">LOGOUT</a></div>
+				<img class="menupic" src="img/menu_hover.png" /><div class="menuword"><a href="logout.php">LOGOUT</a></div>
 				</td>
 			</tr>
 			

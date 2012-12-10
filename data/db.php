@@ -1,18 +1,18 @@
 <?php
-$host = "localhost";
-$username = "root";
-$password = "";
+$dbhost = "localhost";
+$dbusername = "root";
+$dbpassword = "";
 $db = "home";
 // MYSQL Connect
-if (!$link = mysql_connect($host,$username,$password))
+if (!$link = mysql_connect($dbhost,$dbusername,$dbpassword))
  {
-    echo "<br>Connect to MYSQL FAIL!<br>";
+    echo "Connect to MYSQL FAIL!";
     exit();
  }
 // Select DB
 if (!mysql_select_db($db, $link))
 {
-    echo "<br>Error. No database!<br>";
+    echo "Error. No database!";
     exit();
 }
 ?>
