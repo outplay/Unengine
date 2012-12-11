@@ -77,15 +77,21 @@ font-weight: lighter;
 font-size: 30px;
 text-decoration: none;
 padding-top: 25px;
+color: #454545;
 }
 #content .text{
 font-family: Segoe UI;
 font-weight: lighter;
 font-size: 16px;
+color: #454545;
 text-decoration: none;
 line-height: 15px;
-padding: 0 52px 20px 52px;
-border-bottom: 1px double #D8D8D8;
+padding: 0 0 15px 52px;
+}
+#content td{
+font-family: Segoe UI;
+font-weight: lighter;
+font-size: 16px;
 }
 #content .data{
 font-family: Segoe UI;
@@ -99,6 +105,29 @@ float: right;
 #content .sep{
 float: left;
 padding: 27px 0 0 10px;
+}
+#content .readme{
+width: 155px;
+height: 30px;
+background: #0CF;
+margin-left: 53px;
+}
+#content .border{
+border-bottom: 1px double #D8D8D8;
+padding-bottom: 10px;
+}
+#content .readme:hover{
+background: #24459A;
+}
+#content .readmetext{
+font-family: Segoe UI;
+font-weight: lighter;
+font-size: 16px;
+text-decoration: none;
+color: white;
+line-height: 15px;
+padding: 6px 0px 0px 30px;
+font-weight: 600;
 }
 /*CONTENT END*/
 /*FOOTER START*/

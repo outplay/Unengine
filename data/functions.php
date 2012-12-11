@@ -8,7 +8,7 @@ function connectToDB() {
 function newUser($username, $password) {
   global $link;
 
-  $query="INSERT INTO users (username, password, perm) VALUES('$username', '$password', 'member')";
+  $query="INSERT INTO users (username, password, perm) VALUES('$username', '$password', '0')";
   $result=mysql_query($query, $link) or die("Died inserting login info into db.  Error returned if any: ".mysql_error());
 
   return true;

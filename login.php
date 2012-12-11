@@ -55,4 +55,5 @@ maxlength="15"></td></tr>
 <?php
 include ($theme.'/footer.php');
 }
+mysql_close($link);
 ?>

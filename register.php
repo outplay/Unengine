@@ -57,4 +57,6 @@ maxlength="15"></td></tr>
 </table>
 </form>
 </div>
-<?php include ($theme.'/footer.php'); ?>
+<?php include ($theme.'/footer.php');
+mysql_close($link);
+?>

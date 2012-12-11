@@ -12,4 +12,7 @@ include ($theme.'/header.php');
 <p>Your password: <b><?=$_SESSION["password"] ?></b><br /></p>
 <a href="logout.php">Exit</a>
 </div>
-<?php include ($theme.'/footer.php'); ?>
+<?php
+include ($theme.'/footer.php');
+mysql_close($link);
+?>
