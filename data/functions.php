@@ -33,7 +33,7 @@ function checkLoggedIn($status){
       break;
     case "no":
       if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true ){
-        header("Location: members.php");
+        header("Location: ../../index.php");
       }
       break;
   }
