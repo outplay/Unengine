@@ -12,9 +12,6 @@ include('../../data/conf.php');
  
  if (isset($_POST['post']))
 {
- 
- 
- 
  $result = mysql_query("UPDATE `settings` SET title='$title', keywords='$keywords', description='$description', owner='$admin' WHERE id='$id'") or die (mysql_error());
  if($result == TRUE){
                          echo "<script>parent.document.getElementById('write').innerHTML+='Success!<br>Settings UPDATED!<br />'; </script> <br />";
@@ -26,6 +23,5 @@ include('../../data/conf.php');
                                 }
      
 }
- 
 mysql_close();
 ?>

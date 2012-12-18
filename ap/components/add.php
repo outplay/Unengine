@@ -2,18 +2,15 @@
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 include('../../data/conf.php');
- 
+
  $title = $_POST['title'];
- $text = $_POST['text'];
+ $short = $_POST['short'];
+ $full = $_POST['full'];
  $data = date('d M H:m:s');
- 
  
  if (isset($_POST['post']))
 {
- 
- 
- 
- $result = mysql_query("INSERT INTO `content` (`title`, `text`, `data`) VALUES ('$title','$text', '$data')"); 
+ $result = mysql_query("INSERT INTO `content` (`title`, `short_article`, `full_article`, `data`) VALUES ('$title','$short','$full', '$data')"); 
  if($result == TRUE){
                          echo "<script>parent.document.getElementById('write').innerHTML+='Success!<br>Article added!'; </script> <br />";
 						 echo "<a href=\"javascript:history.go(-1)\"> Back!</a> <br />";

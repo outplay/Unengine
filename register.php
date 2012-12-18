@@ -45,15 +45,15 @@ if(!empty($messages)){
   displayErrors($messages);
 }
 ?>
-<p>REGISTRATION <br /></p>
+<p class="text">REGISTRATION <br /></p>
 <form action="<?php print $_SERVER["PHP_SELF"]; ?>" method="POST">
 <table>
-<tr><td>LOGIN:</td><td><input type="text" name="username"
+<tr><td>USERNAME:</td><td><input type="text" placeholder="USERNAME HERE.." name="username"
 value="<?php print isset($_POST["username"]) ? $_POST["username"] : "" ; ?>"
 maxlength="15"></td></tr>
-<tr><td>PASSWORD:</td><td><input type="password" name="password" value="" maxlength="15"></td></tr>
+<tr><td>PASSWORD:</td><td><input type="password" placeholder="PASSWORD HERE..." name="password" value="" maxlength="15"></td></tr>
 <tr><td>RE-PASSWORD:</td><td><input type="password" name="password2" value="" maxlength="15"></td></tr>
-<tr><td>&nbsp;</td><td><input name="submit" type="submit" value="Submit"></td></tr>
+<tr><td>&nbsp;</td><td><input name="submit" type="submit" class="reg" value="Submit"></td></tr>
 </table>
 </form>
 </div>

@@ -3,6 +3,7 @@ $dbhost = "localhost";
 $dbusername = "root";
 $dbpassword = "";
 $db = "home";
+$tbl = "comment";
 // MYSQL Connect
 if (!$link = mysql_connect($dbhost,$dbusername,$dbpassword))
  {

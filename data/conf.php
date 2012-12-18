@@ -13,8 +13,4 @@ $title = $row['title'];
 //Article config
 $strSQL = "SELECT * FROM content ORDER BY id DESC";
 $rs = mysql_query($strSQL);
-//Admin area
-$admins = array (
-'admin' => 'admin',
-);
 ?>

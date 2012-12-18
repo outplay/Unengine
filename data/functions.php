@@ -14,8 +14,6 @@ function newUser($username, $password) {
   return true;
 } 
 
-
-
 function displayErrors($messages) {
   print("<b>Errors details:</b>\n<ul>\n");
 
@@ -29,7 +27,7 @@ function checkLoggedIn($status){
   switch($status){
     case "yes":
       if(!isset($_SESSION["loggedIn"])){
-        header("Location: login.php");
+          header("Location: login.php");
         exit;
       }
       break;
@@ -78,10 +76,6 @@ function field_validator($field_descr, $field_data, $field_type, $min_length="",
   if(!$field_data && !$field_required){ return; }
 
   $field_ok=false;
-
-  $email_regexp="/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|";
-  $email_regexp.="(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/";
-
   $data_types=array(
     "digit"=>"/^[0-9]$/",
     "number"=>"/^[0-9]+$/",
@@ -93,7 +87,7 @@ function field_validator($field_descr, $field_data, $field_type, $min_length="",
   );
 
   if ($field_required && empty($field_data)) {
-    $messages[] = "Поле $field_descr является обезательным";
+    $messages[] = "Field $field_descr  is required!";
     return;
   }
 
