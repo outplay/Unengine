@@ -20,13 +20,13 @@ if(isset($_POST["submit"])){
   $result=mysql_query($query, $link) or die("MySQL query $query failed.  Error if any: ".mysql_error());
 
   if( ($row=mysql_fetch_array($result)) ){
-    $messages[]="Логин \"".$_POST["username"]."\" уже занят, попробуйте другой.";
+    $messages[]="Username \"".$_POST["username"]."\" already taken, try another.";
   }
 
   if(empty($messages)) {
     newUser($_POST["username"], $_POST["password"]);
 
-    cleanMemberSession($_POST["username"], $_POST["password"]);
+    createMemberSession($_POST["username"], $_POST["password"]);
 
     header("Location: members.php");
 
@@ -34,8 +34,6 @@ if(isset($_POST["submit"])){
 }
 global $base_url;
 $theme = $base_url ."/template/default";
-include_once("data/conf.php");
-include("data/header.php");
 include ($theme.'/header.php');
 ?>
 

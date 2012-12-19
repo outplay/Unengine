@@ -1,14 +1,6 @@
 <?php
-function connectToDB() {
-  global $link, $host, $dbusername, $dbpassword, $db;
-  ($link = mysql_pconnect("$host", "$dbusername", "$dbpassword")) || die("Couldn't connect to MySQL");
-  mysql_select_db("$db", $link) || die("Couldn't open db: $db. Error if any was: ".mysql_error() );
-} 
-
 function newUser($username, $password) {
-  global $link;
-
-  $query="INSERT INTO users (username, password, perm) VALUES('$username', '$password', '0')";
+  $query="INSERT INTO users (username, password, permission) VALUES('$username', '$password', '0')";
   $result=mysql_query($query, $link) or die("Died inserting login info into db.  Error returned if any: ".mysql_error());
 
   return true;
@@ -55,13 +47,13 @@ function checkPass($username, $password) {
 } 
 
 
-function cleanMemberSession($username, $password) {
+function createMemberSession($username, $password) {
   $_SESSION["username"]=$username;
   $_SESSION["password"]=$password;
   $_SESSION["loggedIn"]=true;
 } 
 
-function flushMemberSession() {
+function closeMemberSession() {
   unset($_SESSION["username"]);
   unset($_SESSION["password"]);
   unset($_SESSION["loggedIn"]);

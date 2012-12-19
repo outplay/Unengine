@@ -1,5 +1,5 @@
 <?php
-include "conf.php";
+include_once "conf.php";
 $name = trim ($_POST["name"]);
 $name = htmlspecialchars ($name);
 $email = trim ($_POST["email"]);

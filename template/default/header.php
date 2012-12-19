@@ -1,4 +1,13 @@
 <!DOCTYPE HTML>
+<?php
+Error_Reporting(E_ALL & ~E_NOTICE);
+$strSET = "SELECT * FROM settings ORDER BY id DESC";
+$rs = mysql_query($strSET);
+$row = mysql_fetch_array($rs);
+$keywords = $row['keywords'];
+$description = $row['description'];
+$title = $row['title'];
+?>
 <html>
 <head>
 <meta name="keywords" content="<?=$keywords ?>">
@@ -13,11 +22,11 @@
 		<table>
 			<tr>
 <?php
-$permission="SELECT `perm` FROM users WHERE username='".$_SESSION['username']."'";
+$permission="SELECT `permission` FROM users WHERE username='".$_SESSION['username']."'";
 $name = $_SESSION['username'];
 if ( mysql_num_rows($result = mysql_query($permission)) ) {
   $check = mysql_fetch_array($result);
-  if ($check['perm']>="0"){
+  if ($check['permission']>="0"){
 		echo "<td>Action:  $name  </td>
 			  <td><a href=\"logout.php\" />Logout</a></td>";
    }elseif (checkLoggedIn("no")){

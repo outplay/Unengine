@@ -20,7 +20,7 @@ if(isset($_POST["submit"])) {
     exit;
   }
 
-  cleanMemberSession($row["username"], $row["password"]);
+  createMemberSession($row["username"], $row["password"]);
 
   header("Location: index.php");
 } else {

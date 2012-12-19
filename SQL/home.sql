@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Дек 18 2012 г., 16:35
+-- Время создания: Дек 19 2012 г., 14:13
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -98,10 +98,10 @@ INSERT INTO `settings` (`title`, `owner`, `description`, `keywords`, `id`) VALUE
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `perm` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `permission` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
 
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `email`, `perm`) VALUES
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `permission`) VALUES
 (12, 'test', 'test', '', '0'),
 (11, 'admin', 'admin', '', '3');
 

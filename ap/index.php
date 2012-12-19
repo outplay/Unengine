@@ -51,10 +51,10 @@ $panel = "<!DOCTYPE HTML>
 	</div>
 </body>
 </html>";
-$permission="SELECT `perm` FROM users WHERE username='".$_SESSION['username']."'";
+$permission="SELECT `permission` FROM users WHERE username='".$_SESSION['username']."'";
 if ( mysql_num_rows($result = mysql_query($permission)) ) {
   $check = mysql_fetch_array($result);
-  if ($check['perm']=="3" or $check['perm']=="2"){
+  if ($check['permission']=="3" or $check['permission']=="2"){
     echo $panel;
     }else{echo"No Permissions!";}
 }

@@ -1,16 +1,22 @@
 <?php
 session_start();
 error_reporting(E_ALL);
-include ('db.php');
+$dbhost = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$db = "home";
+$tbl = "comment";
+// MYSQL Connect
+if (!$link = mysql_connect($dbhost,$dbusername,$dbpassword))
+ {
+    echo "Connect to MYSQL FAIL!";
+    exit();
+ }
+// Select DB
+if (!mysql_select_db($db, $link))
+{
+    echo "Error. No database!";
+    exit();
+}
 include_once('functions.php');
-// Site config
-$strSET = "SELECT * FROM settings ORDER BY id DESC";
-$rs = mysql_query($strSET);
-$row = mysql_fetch_array($rs);
-$keywords = $row['keywords'];
-$description = $row['description'];
-$title = $row['title'];
-//Article config
-$strSQL = "SELECT * FROM content ORDER BY id DESC";
-$rs = mysql_query($strSQL);
 ?>
