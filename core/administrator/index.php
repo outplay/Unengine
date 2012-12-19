@@ -14,7 +14,7 @@ $panel = "<!DOCTYPE HTML>
 		<table class='menu'>
 			<tr>
 				<td class='menuitem'>
-				<img class='menupic' src='img/menu_hover.png' /><div class='menuword'><a href='/ap'>HOME</a></div>
+				<img class='menupic' src='img/menu_hover.png' /><div class='menuword'><a href='/administrator'>HOME</a></div>
 				</td>
 				<td class='content' rowspan='4'>
 				<div class='clear'></div>
@@ -31,7 +31,7 @@ $panel = "<!DOCTYPE HTML>
 			
 			<tr>
 				<td class='menuitem'>
-				<img class='menupic' src='img/menu_hover.png' /><div class='menuword'><a href='/ap'>ADD USER</a></div>
+				<img class='menupic' src='img/menu_hover.png' /><div class='menuword'><a href='/administrator'>ADD USER</a></div>
 				</td>
 			</tr>
 			
