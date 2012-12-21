@@ -1,4 +1,14 @@
 <?php
+if (!$link = mysql_connect($dbhost,$dbusername,$dbpassword))
+ {
+    echo "Connect to MYSQL FAIL!";
+    exit();
+ }
+if (!mysql_select_db($db, $link))
+{
+    echo "Error. No database!";
+    exit();
+}
 function newUser($username, $password) {
   $query="INSERT INTO users (username, password, permission) VALUES('$username', '$password', '0')";
   $result=mysql_query($query, $link) or die("Died inserting login info into db.  Error returned if any: ".mysql_error());
